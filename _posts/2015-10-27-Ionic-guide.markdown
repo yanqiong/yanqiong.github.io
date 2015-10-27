@@ -2,8 +2,10 @@
 layout: post
 title:  "Ionic入门权威指南"
 date:   2015-10-27 14:44:44 +0800
-categories: Ionic 翻译
+categories: Ionic
 ---
+
+翻译，原文链接 [https://www.airpair.com/ionic-framework/posts/the-definitive-ionic-starter-guide][0]
 
 [Ionic][1] 对于用 HTML、CSS 和 JavaScript 构建移动 APP 是一个强大的工具。本教程将以完成一个实际的完整移动 APP 的过程为例，讲授 ionic 的主要特性。最终，你将很好地掌握 ionic，从而构建漂亮而功能丰富的移动 APP。
 
@@ -808,7 +810,7 @@ Ionic List component 同样有删除模式，和我们之前在 quotes state 看
 
 如果你还想学习更多，我推荐你看看 [Ionic in Action][32]，这本书介绍了更多地细节信息。它还提供了 Angular 基础教程，有大量的实例介绍如何使用 Ionic 和 Cordova 插件（通过 ngCordova ）、如何测试、还有如何正确构建应用并提交给应用商店。
 
-
+  [0]: https://www.airpair.com/ionic-framework/posts/the-definitive-ionic-starter-guide
   [1]: http://ionicframework.com/
   [2]: https://www.airpair.com/angularjs/posts/angularjs-tutorial
   [3]: https://ionic-starter-guide.herokuapp.com/#/tabs/quotes

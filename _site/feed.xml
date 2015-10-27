@@ -6,13 +6,15 @@
 </description>
     <link>http://yourdomain.com/</link>
     <atom:link href="http://yourdomain.com/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 27 Oct 2015 15:41:55 +0800</pubDate>
-    <lastBuildDate>Tue, 27 Oct 2015 15:41:55 +0800</lastBuildDate>
+    <pubDate>Tue, 27 Oct 2015 15:46:20 +0800</pubDate>
+    <lastBuildDate>Tue, 27 Oct 2015 15:46:20 +0800</lastBuildDate>
     <generator>Jekyll v3.0.0</generator>
     
       <item>
         <title>Ionic入门权威指南</title>
-        <description>&lt;p&gt;&lt;a href=&quot;http://ionicframework.com/&quot;&gt;Ionic&lt;/a&gt; 对于用 HTML、CSS 和 JavaScript 构建移动 APP 是一个强大的工具。本教程将以完成一个实际的完整移动 APP 的过程为例，讲授 ionic 的主要特性。最终，你将很好地掌握 ionic，从而构建漂亮而功能丰富的移动 APP。&lt;/p&gt;
+        <description>&lt;p&gt;翻译，原文链接 &lt;a href=&quot;https://www.airpair.com/ionic-framework/posts/the-definitive-ionic-starter-guide&quot;&gt;https://www.airpair.com/ionic-framework/posts/the-definitive-ionic-starter-guide&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://ionicframework.com/&quot;&gt;Ionic&lt;/a&gt; 对于用 HTML、CSS 和 JavaScript 构建移动 APP 是一个强大的工具。本教程将以完成一个实际的完整移动 APP 的过程为例，讲授 ionic 的主要特性。最终，你将很好地掌握 ionic，从而构建漂亮而功能丰富的移动 APP。&lt;/p&gt;
 
 &lt;p&gt;Ionic 是基于 Angular 框架的，本教程针对熟悉 Angular 并且有一定 Web 应用开发基础的人员。如果你需要了解Angular相关知识，推荐你阅读Todd Motto的文章 &lt;a href=&quot;https://www.airpair.com/angularjs/posts/angularjs-tutorial&quot;&gt;《AngularJS Tutorial: A Comprehensive 10,000 Word Guide》&lt;/a&gt;，该文章假设读者已有NodeJS的相关知识。&lt;/p&gt;
 
@@ -835,13 +837,11 @@ $ ionic serve
 
 </description>
         <pubDate>Tue, 27 Oct 2015 14:44:44 +0800</pubDate>
-        <link>http://yourdomain.com/ionic/%E7%BF%BB%E8%AF%91/2015/10/27/ionic-guide.html</link>
-        <guid isPermaLink="true">http://yourdomain.com/ionic/%E7%BF%BB%E8%AF%91/2015/10/27/ionic-guide.html</guid>
+        <link>http://yourdomain.com/ionic/2015/10/27/ionic-guide.html</link>
+        <guid isPermaLink="true">http://yourdomain.com/ionic/2015/10/27/ionic-guide.html</guid>
         
         
         <category>Ionic</category>
-        
-        <category>翻译</category>
         
       </item>
     
