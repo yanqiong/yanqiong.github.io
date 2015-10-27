@@ -1,18 +1,20 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>{{ page.title }}{{ page.title }}</title>
-	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-	<link rel="stylesheet" type="text/css" href="bower_components/bootstrap/css/bootstrap.css">
-	<link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css">
-	<script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
-	<script type="text/javascript" src="bower_components/bootstrap/js/bootstrap.js"></script>
-	<script type="text/javascript" src="javascripts/main.js"></script>
 
-</head>
-<body>
-	
-	<div>{{content}}</div>
-	
-</body>
+  {% include head.html %}
+
+  <body>
+
+    {% include header.html %}
+
+    <div class="page-content">
+      <div class="wrapper">
+        {{ content }}
+      </div>
+    </div>
+
+    {% include footer.html %}
+
+  </body>
+
 </html>
