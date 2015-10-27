@@ -41,17 +41,17 @@ Ionic 是用来构建使用 HTML、CSS 和 JavaScript 开发的 [混合应用][6
 
 Components 是使用标签和 CSS 类标识的用户界面元素，比如标签页、标题栏、幻灯片、侧滑菜单等等。这些组件要么是 CSS 类（比如 CSS 框架 Bootstrap ），要么使用 Angular 指令实现。一些 CSS 组件（`input`、`card`、`button`）没有提供额外的功能，但是 Ionic 提供了更好的样式展现使其能在移动设备上表现的更好。指令组件（`sidemenu`、`list`、`slidebox`）是可以像 HTML 标签一样使用的。
 
-
-    <!-- Card: CSS Component Example -->
-    <div class="list card">
-      <div class="item">Basic card!</div>
-    </div>
-    
-    <!-- SlideBox: Directive Component Example -->
-    <ion-slide-box slide-interval="10000" does-continue="true">
-      <ion-slide>Slide 1</ion-slide>
-      <ion-slide>Slide 2</ion-slide>
-    </ion-slide-box>
+{% highlight html %}
+<!-- Card: CSS Component Example -->
+<div class="list card">
+  <div class="item">Basic card!</div>
+</div>
+<!-- SlideBox: Directive Component Example -->
+<ion-slide-box slide-interval="10000" does-continue="true">
+  <ion-slide>Slide 1</ion-slide>
+  <ion-slide>Slide 2</ion-slide>
+</ion-slide-box>
+{% endhighlight %}
 
 在上面的两个例子中，第一个是现在在很多 google 应用中可以看到的卡片效果。仅仅是用 CSS 类就可以将样式做出效果。第二个是一个滑动框，用指令和 HTML 标签配合实现。在侧滑框的例子中还包括了一些属性，比如 `slide-interval` 指定了滑动框的配置（在这个例子中指定了每个滑动框展示的时间间隔）。
 
@@ -59,15 +59,16 @@ Components 是使用标签和 CSS 类标识的用户界面元素，比如标签�
 
 Services 是在 JavaScript 中声明来操作用户界面元素的，通过了 Angular 的 Service 结构来提供。通常用在控制器中，提供有显示时间限制的界面元素（比如弹出窗口、弹出对话框、进度条）。就和 Angular 的 services 一样，Ionic 的 services 全部以 `$` 开头，而且在下面的例子中，你可以看到 services 都是根据功能来准确地命名。
 
-
-    function Controller($scope, $ionicSlideBoxDelegate) {
-      $scope.next = function() {
-        $ionicSlideBoxDelegate.next();
-      }
-      $scope.previous = function() {
-        $ionicSlideBoxDelegate.previous();
-      }
-    }
+{% highlight javascript %}
+function Controller($scope, $ionicSlideBoxDelegate) {
+  $scope.next = function() {
+    $ionicSlideBoxDelegate.next();
+  }
+  $scope.previous = function() {
+    $ionicSlideBoxDelegate.previous();
+  }
+}
+{% endhighlight %}
 
 在这个控制器中，作用域下有两个方法使用 service 来控制滑动框（任何管理组件的 services 都叫做代理 services ）。这样开发人员就可以让任意的按钮去更改滑动框中的内容，比如下面两个按钮。
 
@@ -109,128 +110,106 @@ Ionic 一个十分有用的特性就是可以使用 [Sass][20] 定制化默认�
 
 我们教程中的 app 需要一些样式，所以你需要把 scss/ionic.app.scss 中内容改为以下内容。
 
-    // Override variables
-    $light: #eee;
-    
-    $lighter: #fff;
-    
-    $darker: #363636;
-    
-    $assertive: #B33F33;
-    
-    $balanced: #70AB23;
-    
-    $positive: #366091;
-    
-    // The path for our ionicons font files, relative to the built CSS in www/css
-    $ionicons-font-path: "../lib/ionic/fonts" !default;
-    
-    // Include all of Ionic
-    @import "www/lib/ionic/scss/ionic";
-    
-    // Dark theme for backgrounds.
-    .view, .pane, .modal {
-      background: $darker;
-    }
-    
-    // Style the form inside of the footer bar
-    .bar-search {
-      padding: 0;
-    
-      form {
-        display: block;
-        width: 100%;
-      }
-    
-      .item {
-        padding: 3.75px 10px;
-      }
-    }
-    
-    // Make the item-dark style default by extending it back on top of item
-    .item {
-      @extend .item-dark;
-    }
-    
-    //
-    .item-reorder .button.icon {
-      color: $light;
-    }
-    
-    // Make inputs nicer on dark
-    .item-input {
-    
-      input {
-        margin-right: 30px;
-        padding-left: 5px;
-        background: $darker;
-        color: $light;
-      }
-      .input-label {
-        color: $light;
-      }
-    }
-    .item-input-wrapper {
-      background: $darker;
-    
-      input {
-        color: $lighter;
-      }
-    }
-    
-    // Make toggler nicer on dark
-    .toggle .track {
-      background-color: $dark;
-      border-color: $darker;
-    }
-    .toggle input:checked + .track {
-      background-color: $positive;
-      border-color: $positive;
-    }
-    
-    // Remove a bottom border
-    .tabs-striped .tabs {
-      border-bottom: 0;
-    }
-    
-    // Allow the tabs to be as wide as needed
-    .tab-item {
-      max-width: none;
-    }
-    
-    // Styles for the quote component
-    .quote {
-      background: $darker;
-      padding: 5px;
-      border-radius: 4px;
-      display: block;
-      position: absolute;
-      top: 1px;
-      right: 16px;
-      text-align: center;
-      width: 90px;
-      height: 50px;
-      color: $lighter;
-    
-      .spinner svg {
-        margin-top: 6px;
-      }
-    
-      &.positive {
-        background: $balanced;
-        color: $light;
-      }
-    
-      &.negative {
-        background: $assertive;
-        color: $light;
-      }
-    
-      .quote-change {
-        font-size: 0.8em;
-        color: $light;
-      }
-    }
+{% highlight scss %}
+// Override variables
+$light: #eee;
+$lighter: #fff;
+$darker: #363636;
+$assertive: #B33F33;
+$balanced: #70AB23;
+$positive: #366091;
+// The path for our ionicons font files, relative to the built CSS in www/css
+$ionicons-font-path: "../lib/ionic/fonts" !default;
+// Include all of Ionic
+@import "www/lib/ionic/scss/ionic";
+// Dark theme for backgrounds.
+.view, .pane, .modal {
+  background: $darker;
+}
+// Style the form inside of the footer bar
+.bar-search {
+  padding: 0;
+  form {
+    display: block;
+    width: 100%;
+  }
+  .item {
+    padding: 3.75px 10px;
+  }
+}
+// Make the item-dark style default by extending it back on top of item
+.item {
+  @extend .item-dark;
+}
+//
+.item-reorder .button.icon {
+  color: $light;
+}
+// Make inputs nicer on dark
+.item-input {
+  input {
+    margin-right: 30px;
+    padding-left: 5px;
+    background: $darker;
+    color: $light;
+  }
+  .input-label {
+    color: $light;
+  }
+}
+.item-input-wrapper {
+  background: $darker;
+  input {
+    color: $lighter;
+  }
+}
+// Make toggler nicer on dark
+.toggle .track {
+  background-color: $dark;
+  border-color: $darker;
+}
+.toggle input:checked + .track {
+  background-color: $positive;
+  border-color: $positive;
+}
+// Remove a bottom border
+.tabs-striped .tabs {
+  border-bottom: 0;
+}
+// Allow the tabs to be as wide as needed
+.tab-item {
+  max-width: none;
+}
+// Styles for the quote component
+.quote {
+  background: $darker;
+  padding: 5px;
+  border-radius: 4px;
+  display: block;
+  position: absolute;
+  top: 1px;
+  right: 16px;
+  text-align: center;
+  width: 90px;
+  height: 50px;
+  color: $lighter;
+  .spinner svg {
+    margin-top: 6px;
+  }
+  &.positive {
+    background: $balanced;
+    color: $light;
+  }
+  &.negative {
+    background: $assertive;
+    color: $light;
+  }
+  .quote-change {
+    font-size: 0.8em;
+    color: $light;
+  }
+}
+{% endhighlight %}
 
 在这个样式文件最上面，是用自定义的颜色重写了 Ionic 变量（我们的应用的不会出现和 Ionic 默认样式一样的颜色）。样式文件空白处都添加了注释，当我们完成了这个 app，再回过头来看会更容易。
 
