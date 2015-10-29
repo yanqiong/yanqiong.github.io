@@ -1,11 +1,11 @@
 ---
 layout: post
 title:  "JavaScript 的柯里化函数"
-date:   2015-10-29 
+date:   2015-10-29 14:44:44 +0800
 categories: JavaScript
 ---
 
-翻译，原文链接 http://www.sitepoint.com/currying-in-functional-javascript/
+翻译，原文链接 [http://www.sitepoint.com/currying-in-functional-javascript/][0]
 
 柯里化是把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数而且返回结果的新函数的技术。
 
@@ -199,7 +199,7 @@ If you enjoyed, this post, you might also like some of the others from the serie
 * [Higher-Order Functions in JavaScript][3]
 * [Recursion in Functional JavaScript][4]
 
-
+  [0]: http://www.sitepoint.com/currying-in-functional-javascript/
   [1]: http://ramdajs.com/0.18.0/index.html
   [2]: http://www.sitepoint.com/introduction-functional-javascript/
   [3]: http://www.sitepoint.com/higher-order-functions-javascript/
