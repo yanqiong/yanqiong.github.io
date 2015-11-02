@@ -9,36 +9,21 @@ categories: JavaScript
 
 柯里化是把接受多个参数的函数变换成接受一个单一参数（最初函数的第一个参数）的函数，并且返回接受余下的参数而且返回结果的新函数的技术。
 
-# A Beginner’s Guide to Currying in Functional JavaScript
-**【新手教程】JavaScript的柯里化函数**
-
-Currying, or partial application, is one of the functional techniques that can sound confusing to people familiar with more traditional ways of writing JavaScript. But when applied properly, it can actually make your functional JavaScript more readable.
+#【新手教程】JavaScript的柯里化函数
 
 柯里化，或者说部分应用，是一种函数式编程的技术，对于熟悉以传统方式编写 JavaScript 代码的人来说可能会很费解。但如果使用得当，它可以使你的 JavaScript 函数更具可读性。
 
-## More Readable And More Flexible
-**更具可读性和灵活性**
-
-One of the advantages touted for functional JavaScript is shorter, tighter code that gets right to the point in the fewest lines possible, and with less repetition. Sometimes this can come at the expense of readability; until you’re familiar with the way the functional programming works, code written in this way can be harder to read and understand.
+## 更具可读性和灵活性
 
 函数式 JavaScript 被吹捧的优点之一就是拥有短小紧凑的代码风格，可以用最少行数、更少重复的代码得到正确的结果。有时这会以牺牲可读性为代价；如果你还不熟悉函数式编程的方法，这种方法写的代码会很难阅读和理解。
 
-If you’ve come across the term currying before, but never knew what it meant, you can be forgiven for thinking of it as some exotic, spicy technique that you didn’t need to bother about. But currying is actually a very simple concept, and it addresses some familiar problems when dealing with function arguments, while opening up a range of flexible options for the developer.
-
 如果之前你遇到过柯里化这个术语，但是不知道它是什么意思，把它当做奇怪的、难理解的技术而不去理会，这也是可以理解的。但是事实上柯里化是一个非常简单的概念，它在处理函数参数的时候，涉及到一些常见的问题，同时为开发人员提供了灵活的选择范围。
 
-## What Is Currying?
-**什么是柯里化**
-
-Briefly, currying is a way of constructing functions that allows partial application of a function’s arguments. What this means is that you can pass all of the arguments a function is expecting and get the result, or pass a subset of those arguments and get a function back that’s waiting for the rest of the arguments. It really is that simple.
+## 什么是柯里化
 
 简单来说，柯里化是一种允许使用部分函数参数构造函数的方式。也就是意味着，你在调用一个函数时，可以传入需要的全部参数并获得返回结果，也可以传入部分参数并的得到一个返回的函数，它需要传入的就是其余的参数。它真的就是那么简单。
 
-Currying is elemental in languages such as Haskell and Scala, which are built around functional concepts. JavaScript has functional capabilities, but currying isn’t built in by default (at least not in current versions of the language). But we already know some functional tricks, and we can make currying work for us in JavaScript, too.
-
 在像 Haskell 和 Scala 这样的函数式编程语言中，柯里化是其基本原理。 JavaScript 具有函数式编程的能力，但是并没有默认支持柯里化函数（至少目前的版本没有支持）。但是我们已经知道了一些函数式的技巧，那我们就也可以让在 JavaScript 里实现柯里化。
-
-To give you a sense of how this could work, let’s create our first curried function in JavaScript, using familiar syntax to build up the currying functionality that we want. As an example, let’s imagine a function that greets somebody by name. We all know how to create a simple greet function that takes a name and a greeting, and logs the greeting with the name to the console:
 
 为了让你理解柯里化的原理，我们开始来写第一个柯里化的 JavaScript 函数，使用熟悉的语法去新建一个我们想要的柯里化函数。比如说，我们假设有个函数是问候某个人的名字。我都很容易想到，创建一个简单的函数，接受问候语和一个名字作为参数，然后在控制台打印出整个问候的句子：
 
@@ -48,12 +33,9 @@ To give you a sense of how this could work, let’s create our first curried fun
     };
     greet("Hello", "Heidi"); //"Hello, Heidi"
 
-This function requires both the name and the greeting to be passed as arguments in order to work properly. But we could rewrite this function using simple nested currying, so that the basic function only requires a greeting, and it returns another function that takes the name of the person we want to greet.
-
 这个函数需要把名字和问候语两个参数全部提供，才能够正确运行。但是我们可以使用简单的嵌套的柯里化方法重写这个函数，这样基本的函数只需要一个参数问候语，并返回以需要问候的名字为参数的另一个方法。
 
-## Our First Curry
-**第一个柯里化函数**
+## 第一个柯里化函数
 
     var greetCurried = function(greeting) {
       return function(name) {
@@ -61,28 +43,19 @@ This function requires both the name and the greeting to be passed as arguments 
       };
     };
     
-This tiny adjustment to the way we wrote the function lets us create a new function for any type of greeting, and pass that new function the name of the person that we want to greet:
-
 我们刚刚所写的这种小小的调整，使我们获得了一个可以接受任何问候语为参数的新函数，并且返回一个以我们想要问候的人名为参数新函数：
 
     var greetHello = greetCurried("Hello");
     greetHello("Heidi"); //"Hello, Heidi"
     greetHello("Eddie"); //"Hello, Eddie"
     
-We can also call the original curried function directly, just by passing each of the parameters in a separate set of parentheses, one right after the other:
-
 我们也可以直接调用原始的柯里化函数，只需要把每个参数分别加上小括号，一个接着一个：
 
     greetCurried("Hi there")("Howard"); //"Hi there, Howard"
 
-Why not try this out in your browser?
-
 为什么不在你的浏览器里试试？
 
-## Curry All the Things!
-**全部都柯里化**
-
-The cool thing is, now that we have learned how to modify our traditional function to use this approach for dealing with arguments, we can do this with as many arguments as we want:
+## 全部都柯里化
 
 炫酷的事情来了，现在我们已经学会了如何用这种方法处理传统函数的参数，我们可以处理尽可能多的参数：
 
@@ -96,15 +69,11 @@ The cool thing is, now that we have learned how to modify our traditional functi
       };
     };
     
-We have the same flexibility with four arguments as we have with two. No matter how far the nesting goes, we can create new custom functions to greet as many people as we choose in as many ways as suits our purposes:
-
 当有四个参数时和两个参数相比，具有同样地灵活性。无论嵌套多少层，我们都能够写出一个新的定制化的问候函数，无论我们选择了多少人、以多少种想要的方式。
 
     var greetAwkwardly = greetDeeplyCurried("Hello")("...")("?");
     greetAwkwardly("Heidi"); //"Hello...Heidi?"
     greetAwkwardly("Eddie"); //"Hello...Eddie?"
-
-What’s more, we can pass as many parameters as we like when creating custom variations on our original curried function, creating new functions that are able to take the appropriate number of additional parameters, each passed separately in its own set of parentheses:
 
 更重要的是，在原始的柯里化函数的基础上，我们可以传入需要的参数来创建一个新的变异函数，这个新的函数能够继续接受其余的参数，每个参数分别在一个圆括号里：
 
@@ -112,22 +81,15 @@ What’s more, we can pass as many parameters as we like when creating custom va
     sayHello(".")("Heidi"); //"Hello, Heidi."
     sayHello(".")("Eddie"); //"Hello, Eddie."
 
-And we can define subordinate variations just as easily:
-
 并且我们可以很容易地定义再下一级的变异函数：
 
     var askHello = sayHello("?");
     askHello("Heidi"); //"Hello, Heidi?"
     askHello("Eddie"); //"Hello, Eddie?"
 
-## Currying Traditional Functions
-**柯里化经典函数**
-
-You can see how powerful this approach is, especially if you need to create a lot of very detailed custom functions. The only problem is the syntax. As you build these curried functions up, you need to keep nesting returned functions, and call them with new functions that require multiple sets of parentheses, each containing its own isolated argument. It can get messy.
+## 柯里化经典函数
 
 你可以看到这种方法是多么的强大，尤其是当你需要许多复杂的定制化的函数时。唯一的问题就是语法。当你建立这些柯里化函数的时候，需要保证嵌套的返回子函数，并且调用它们的时候需要多组圆括号，每个都包含一个自己独立的参数。这会变得一团糟。
-
-To address that problem, one approach is to create a quick and dirty currying function that will take the name of an existing function that was written without all the nested returns. A currying function would need to pull out the list of arguments for that function, and use those to return a curried version of the original function:
 
 为了解决这个问题，一种方法就是去新建一个快速的脏柯里化函数，它以一个已经存在的没有嵌套返回的函数为参数。这个柯里化函数需要得到传入函数的参数列表，并用这些函数返回原始函数的柯里化版本：
 
@@ -140,8 +102,6 @@ To address that problem, one approach is to create a quick and dirty currying fu
       };
     };
     
-To use this, we pass it the name of a function that takes any number of arguments, along with as many of the arguments as we want to pre-populate. What we get back is a function that’s waiting for the remaining arguments:
-
 为了使用这种方式，我们传入带有任意个参数的函数名字，以及我们想预填充的若干个参数。我们得到的就是一个需要其余参数的函数：
 
     var greeter = function(greeting, separator, emphasis, name) {
@@ -151,47 +111,28 @@ To use this, we pass it the name of a function that takes any number of argument
     greetHello("Heidi"); //"Hello, Heidi."
     greetHello("Eddie"); //"Hello, Eddie."
     
-And just as before, we’re not limited in terms of the number of arguments we want to use when building derivative functions from our curried original function:
-
 正如之前，我们在用柯里化函数构建子函数的时候，并不会限制参数的个数：
 
     var greetGoodbye = curryIt(greeter, "Goodbye", ", ");
     greetGoodbye(".", "Joe"); //"Goodbye, Joe."
 
-## Getting Serious about Currying
-**认真思考柯里化**
-
-Our little currying function may not handle all of the edge cases, such as missing or optional parameters, but it does a reasonable job as long as we stay strict about the syntax for passing arguments.
+## 认真思考柯里化
 
 我们这个小小的柯里化函数可能无法处理所有的边缘情况，比如丢失或可选参数，但只要我们严格按照语法传递参数，它就能够有效工作。
 
-Some functional JavaScript libraries such as [Ramda][1] have more flexible currying functions that can break out the parameters required for a function, and allow you to pass them individually or in groups to create custom curried variations. If you want to use currying extensively, this is probably the way to go.
-
 一些函数式的 JavaScript 库，如 [Ramda][1] 拥有更灵活的柯里化功能，它可以打乱一个函数需要的参数，并允许你单独或分组地传入参数，以创建一个定制化的柯里化的变形函数。如果你想广泛地柯里化，这可能是一个方向。
-
-Regardless of how you choose to add currying to your programming, whether you just want to use nested parentheses or you prefer to include a more robust carrying function, coming up with a consistent naming convention for your curried functions will help make your code more readable. Each derived variation of a function should have a name that makes it clear how it behaves, and what arguments it’s expecting.
 
 无论你选择如何对程序进行柯里化，是只用嵌套的括号还是更倾向于包括一个更稳健的柯里化函数，使用统一的命名规范有助于使你的代码更具可读性。每个派生出的函数都应该有一个可以清楚表明它行为和期望参数的名字。
 
-## Argument Order 
-**参数顺序**
-
-One thing that’s important to keep in mind when currying is the order of the arguments. Using the approach we’ve described, you obviously want the argument that you’re most likely to replace from one variation to the next to be the last argument passed to the original function.
+## 参数顺序
 
 进行柯里化的时候，一定要记住参数的顺序很重要。使用我们刚刚讲的方法，你很明显想要原始函数的最后一个的参数，是从柯里化函数一层层变形得到的函数的参数。
 
-Thinking ahead about argument order will make it easier to plan for currying, and apply it to your work. And considering the order of your arguments in terms of least to most likely to change is not a bad habit to get into anyway when designing functions.
-
 提前考虑的参数顺序会使柯里化更容易地应用到你的项目中。并且为了适应更多地情况，在设计函数时，考虑按照容易变化的程度排列参数的顺序不是一个坏习惯。
 
-## Conclusion
-**结论**
-
-Currying is an incredibly useful technique from functional JavaScript. It allows you to generate a library of small, easily configured functions that behave consistently, are quick to use, and that can be understood when reading your code. Adding currying to your coding practice will encourage the use of partially applied functions throughout your code, avoiding a lot of potential repetition, and may help get you into better habits about naming and dealing with function arguments.
+## 结语
 
 柯里化对于函数式 JavaScript 是一种极其有用的技术。它允许你生成一个简洁、易配置、表现统一的库，而且使用起来上手快、具有可读性。在你的编码实践中加入柯里化会激励你在全部代码中的部分函数上应用它，这样避免了很多潜在的重复工作，并可以帮助你养成关于函数命名和处理函数参数的好习惯。
-
-If you enjoyed, this post, you might also like some of the others from the series:
 
 如果你喜欢这篇文章，你可能也会喜欢这个系列的其他文章：
 
