@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "JS 开发者常用的 10 个 Sublime Text 插件"
-date:   2015-10-29 14:44:44 +0800
+date:   2015-11-1 00:00:00 +0800
 categories: JavaScript
 ---
 

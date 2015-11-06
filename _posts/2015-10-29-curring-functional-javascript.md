@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "JavaScript 的柯里化函数"
-date:   2015-10-29 14:44:44 +0800
+date:   2015-10-29 00:00:00 +0800
 categories: JavaScript
 ---
 

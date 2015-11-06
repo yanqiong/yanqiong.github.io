@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Ionic入门权威指南"
-date:   2015-10-27 14:44:44 +0800
+date:   2015-10-28 00:00:00 +0800
 categories: Ionic
 ---
 
