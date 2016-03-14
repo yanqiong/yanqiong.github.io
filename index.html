@@ -35,7 +35,7 @@ layout: default
   <hr/>
 
   <!-- 分页链接 -->
-  <div class="pagination">
+  <!-- <div class="pagination">
     {% if paginator.previous_page %}
       <a href="/page{{ paginator.previous_page }}" class="previous">Previous</a>
     {% else %}
@@ -47,7 +47,7 @@ layout: default
     {% else %}
       <span class="next ">Next</span>
     {% endif %}
-  </div>
+  </div> -->
 
   {% if paginator.total_pages > 1 %}
     <div class="pagination">
@@ -57,16 +57,17 @@ layout: default
         <span>&laquo; Prev</span>
       {% endif %}
 
-      {{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}
-
       {% for page in (1..paginator.total_pages) %}
         {% if page == paginator.page %}
           <em>{{ page }}</em>
         {% elsif page == 1 %}
-          <a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">{{ page }}</a>
+          <a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">
+            {{ page }}
+          </a>
         {% else %}
-         -- {{ site.baseurl }} --
-          <a href="{{ site.paginate_path  | replace: '//', '/' | replace: ':num', page }}">{{ page }}</a>
+          <a href="{{ site.paginate_path | prepend: '/' | replace: '//', '/' | replace: ':num', page }}">
+            {{ page }}
+          </a>
         {% endif %}
       {% endfor %}
 
@@ -77,6 +78,8 @@ layout: default
       {% endif %}
     </div>
   {% endif %}
+
+<hr/>
 
   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
 
