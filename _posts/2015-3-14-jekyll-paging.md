@@ -29,16 +29,18 @@ categories: jekyll pagination
 在首页（index.html）中使用
 
 {% highlight html %}
-{\% for post in paginator.posts \%}
+{% raw %}
+{% for post in paginator.posts %}
   <li>
-    <span class="post-meta">{\{ post.date | date: "%b %-d, %Y" \}}
-       {\{ post.categories | array_to_sentence_string \}}
+    <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}
+       {{ post.categories | array_to_sentence_string  }}
 
     <h2>
-      <a class="post-link" href="{\{ post.url | prepend: site.baseurl \}}">{\{ post.title \}}</a>
+      <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
     </h2>
   </li>
-{\% endfor \%}
+{% endfor %}
+{% endraw %}
 {% endhighlight %}
 
 **使用时请去掉转义字符 \% => % , \{ => { , \} => }**
@@ -62,35 +64,38 @@ paginator 对象
 *注意，[TODO] 记得修改表格样式*
 
 {% highlight html %}
-{\% if paginator.total_pages > 1 \%}
+{% raw %}
+{% if paginator.total_pages > 1 %}
   <div class="pagination">
-    {\% if paginator.previous_page \%}
-      <a href="{\{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' \}}">&laquo; Prev</a>
-    {\% else \%}
+    {% if paginator.previous_page %}
+      <a href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}">&laquo; Prev</a>
+    {% else %}
       <span>&laquo; Prev</span>
-    {\% endif \%}
+    {% endif %}
 
-    {\% for page in (1..paginator.total_pages) \%}
-      {\% if page == paginator.page \%}
-        <em>{\{ page \}}</em>
-      {\% elsif page == 1 \%}
-        <a href="{\{ '/index.html' | prepend: site.baseurl | replace: '//', '/' \}}">
-          {\{ page \}} :: {\{ '/index.html' | prepend: site.baseurl | replace: '//', '/' \}}
+    {% for page in (1..paginator.total_pages) %}
+      {% if page == paginator.page %}
+        <em>{{ page }}</em>
+      {% elsif page == 1 %}
+        <a href="{{ '/index.html' | prepend: site.baseurl | replace: '//', '/' }}">
+          {{ page }}
         </a>
-      {\% else \%}
-        <a href="{\{ site.paginate_path | prepend: '/' | replace: '//', '/' | replace: ':num', page \}}">
-          {\{ page \}} :: {\{ site.paginate_path | prepend: site.baseurl  | replace: '//', '/' | replace: ':num', page \}}
+      {% else %}
+        <a href="{{ site.paginate_path | prepend: '/' | replace: '//', '/' | replace: ':num', page }}">
+          {{ page }}
         </a>
-      {\% endif \%}
-    {\% endfor \%}
+      {% endif %}
+    {% endfor %}
 
-    {\% if paginator.next_page \%}
-      <a href="{\{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' \}}">Next &raquo;</a>
-    {\% else \%}
+    {% if paginator.next_page %}
+      <a href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}">Next &raquo;</a>
+    {% else %}
       <span>Next &raquo;</span>
-    {\% endif \%}
+    {% endif %}
   </div>
-{\% endif \%}
+{% endif %}
+{% endraw %}
 {% endhighlight %}
 
 **注意： 目前的根路径是 / ， site.baseurl 使用起来有问题**
+**{% raw %} {% endraw %} 暂时性的禁用的标签的解析**
