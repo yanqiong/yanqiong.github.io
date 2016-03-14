@@ -5,6 +5,10 @@
 # For technical reasons, this file is *NOT* reloaded automatically when you use
 # 'jekyll serve'. If you change this file, please restart the server process.
 
+paginate: 5
+paginate_path: "page:num"
+gems: [jekyll-paginate]
+
 # Site settings
 title: ElizabethMa
 email: ma_yanqiong@163.com
@@ -19,3 +23,19 @@ github_username:  ElizabethMa
 
 # Build settings
 markdown: kramdown
+
+# 代码高亮
+# pygments: true
+
+# 分页实现indexxxxxxxxxxxxx
+
+# paginator
+# page 当前页码
+# per_page 每页文章数量
+# posts 当前页的文章列表
+# total_posts 总文章数
+# total_pages 总页数
+# previous_page 上一页页码 或 nil
+# previous_page_path 上一页路径 或 nil
+# next_page 下一页页码 或 nil
+# next_page_path 下一页路径 或 nil
