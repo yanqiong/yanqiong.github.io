@@ -1,15 +1,17 @@
 ---
 layout: post
-title:  "在 Jekyll 中添加分页"
-date:   2015-3-14 14:00:00 +0800
+title:  "在 Jekyll 中添加分页、分类"
+date:   2016-3-14 14:00:00 +0800
 categories: jekyll pagination
 ---
 
-## 安装 gem 插件
+## 在 Jekyll 中添加分页
+
+### 安装 gem 插件
 
     sudo gem install jekyll-paginate
 
-## 开启 paginate
+### 开启 paginate
 
 在配置文件 \_config.yml 中添加以下配置项：
 
@@ -24,7 +26,7 @@ categories: jekyll pagination
 
 第三行 ： 分页页面路径配置。
 
-## 使用分页
+### 使用分页
 
 在首页（index.html）中使用
 
@@ -45,7 +47,7 @@ categories: jekyll pagination
 
 **使用时请去掉转义字符 \% => % , \{ => { , \} => }**
 
-## 换页栏
+### 换页栏
 
 paginator 对象
 
@@ -99,3 +101,6 @@ paginator 对象
 
 **注意： 目前的根路径是 / ， site.baseurl 使用起来有问题**
 **{% raw %} {% endraw %} 暂时性的禁用的标签的解析**
+
+
+## 在 Jekyll 中添加分类

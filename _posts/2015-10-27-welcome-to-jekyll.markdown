@@ -2,7 +2,7 @@
 layout: post
 title:  "Welcome to Jekyll!"
 date:   2015-10-27 00:00:00 +0800
-categories: jekyll update jekyll444
+categories: jekyll update 
 ---
 You’ll find this post in your `_posts` directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run `jekyll serve`, which launches a web server and auto-regenerates your site when a file is updated.
 
@@ -23,3 +23,9 @@ Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most ou
 [jekyll-docs]: http://jekyllrb.com/docs/home
 [jekyll-gh]:   https://github.com/jekyll/jekyll
 [jekyll-talk]: https://talk.jekyllrb.com/
+
+一些关于 Jekyll 的文章：
+
++ [《 Jekyll 扩展的 Liquid 设计 》][jekyll-liquid]
+
+[jekyll-liquid]: http://havee.me/internet/2013-11/jekyll-liquid-designers.html

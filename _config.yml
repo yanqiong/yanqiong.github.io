@@ -6,9 +6,11 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # paging
-paginate: 5
+paginate: 15
 paginate_path: "page:num"
 gems: [jekyll-paginate]
+
+safe: false
 
 # Site settings
 title: ElizabethMa
@@ -26,4 +28,4 @@ github_username:  ElizabethMa
 markdown: kramdown
 
 # 代码高亮
-# pygments: true
+highlighter: pygments
