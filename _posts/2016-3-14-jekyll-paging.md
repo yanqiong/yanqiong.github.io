@@ -100,7 +100,8 @@ paginator 对象
 {% endhighlight %}
 
 **注意： 目前的根路径是 / ， site.baseurl 使用起来有问题**
-**{% raw %} {% endraw %} 暂时性的禁用的标签的解析**
+
+**raw & endraw 暂时性的禁用的标签的解析**
 
 
 ## 在 Jekyll 中添加分类
