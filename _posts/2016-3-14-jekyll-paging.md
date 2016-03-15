@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "在 Jekyll 中添加分页、分类"
+title:  "在 Jekyll 中添加分页"
 date:   2016-3-14 14:00:00 +0800
 categories: jekyll pagination
 ---
