@@ -6,7 +6,7 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # paging
-paginate: 5
+paginate: 15
 paginate_path: "page:num"
 gems: [jekyll-paginate]
 
