@@ -18,6 +18,25 @@ print_hi('Tom')
 #=> prints 'Hi, Tom' to STDOUT.
 {% endhighlight %}
 
+| 功能 | 效果 | Markdown代码 | 备注 | 
+|--|--|--|--|
+| 粗体 | **粗体** |  `**粗体**`  |  两边加** |
+| 斜体 | *斜体* | `*斜体*` | 两边加* |
+| 中划线 | ~中划线~ | `~中划线~` | 两边加~ |
+| 单行代码 | `Log.i("Hello World!")` | \`Log.i("Hello World!")\` | 两边加`` |
+| 插入图片 | ![Image](http://www.trinea.cn/rss.png)| `![Image](http://www.trinea.cn/rss.png)` | [] 中间为占位符,() 中间为图片链接 |
+| 链接 | [Visit Github](http://www.github.com) | `[Visit Github](http://www.github.com)` | [] 中间为显示文字,() 中间为链接 |
+
+
+<u>kaixin</u>
+
+<S> Strike One! </S>
+
+<P>
+
+<STRIKE> Strike Two! </STRIKE>
+
+
 Check out the [Jekyll docs][jekyll-docs] for more info on how to get the most out of Jekyll. File all bugs/feature requests at [Jekyll’s GitHub repo][jekyll-gh]. If you have questions, you can ask them on [Jekyll Talk][jekyll-talk].
 
 [jekyll-docs]: http://jekyllrb.com/docs/home
