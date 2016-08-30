@@ -10,6 +10,10 @@ categories: angular
 表单是一系列输入控件的集合,客户端验证表单可以提供更好的用户体验.
 
     <form></from>
+    
+    <ng-form></ng-from>
+    
+经过实践,最好用第二种。第一种会自动绑定的提交动作。
 
 ### Simple from
 
