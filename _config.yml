@@ -29,3 +29,7 @@ markdown: kramdown
 
 # 代码高亮
 highlighter: pygments
+
+google_analytics: 
+show_downloads: true
+theme: jekyll-theme-modernist
