@@ -8,7 +8,7 @@
 # paging
 paginate: 15
 paginate_path: "page:num"
-gems: [jekyll-paginate]
+plugins: [jekyll-paginate]
 
 safe: false
 

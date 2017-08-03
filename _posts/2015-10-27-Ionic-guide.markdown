@@ -13,7 +13,7 @@ Ionic 是基于 Angular 框架的，本教程针对熟悉 Angular 并且有一�
 
 在本教程中你将会学习如何构建一个股票报价应用。你可以在 [这里预览完整地应用][3]，并且可以在GitHub工程  [gnomeontherun/ionic-definitive-guide][4] 看到整个项目的源码。你可以通过改变浏览器的大小或者使用 Chrome 浏览器的 [模拟设备特性][5] 提前看看这个应用在移动设备上的表现。
 
-##Ionic，期盼已久的混合应用开发SDK
+## Ionic，期盼已久的混合应用开发SDK
 
 Ionic 是用来构建使用 HTML、CSS 和 JavaScript 开发的 [混合应用][6] 的，而不是原生语言（安卓使用Java语言，iOS使用Swift语言）。开发原生应用的时候，可以 使用带有界面组件的 SDK，比如 [标签页][7] 和 [复合列表][8]。这些都是使用移动应用熟悉的界面控件，而 Ionic 正提供了一整套控件去构建混合移动应用。
 
@@ -27,7 +27,7 @@ Ionic 是用来构建使用 HTML、CSS 和 JavaScript 开发的 [混合应用][6
 
 另外，Ionic 有一整个完整的服务平台来支持移动应用的开发，比如 [Creator][9] 提供了可视化拖拽/拖放设计模式，[View][10] 可以发布APP预览/测试版本给大众，[Push][11] 可以十分简便的添加推送消息通知。最近，Ionic增加了 [Deploy][12] 和 [Analytics][13]，目前还在内部测试阶段。你完全可以认为 Ionic 一个能够提供给 APP 开发人员完整服务功能的平台。
 
-##安装Ionic
+## 安装Ionic
 
 首先，我们需要安装 Ionic。在本教程中，我们将会在浏览器里预览，而不是在移动设备上（不过你可以根据 [Ionic 开发文档][14] 上的详细步骤，在移动设备上运行程序）。在安装Ionic之前，你的系统需要安装  [Node][15]。（注意：io.js 可能运行不正确）。在命令行终端运行以下命令：
 
@@ -35,7 +35,7 @@ Ionic 是用来构建使用 HTML、CSS 和 JavaScript 开发的 [混合应用][6
     
 这里，Node 包管理器（ NPM ）会下载并安装 Ionic 命令行工具。它是构建 Ionic 应用的基础，并且我们后面还会用来创建、预览、构建应用。现在，我们来浏览Ionic的几个主要特性。
 
-##Ionic components & services
+## Ionic components & services
 
 在构建我们自己的APP之前，我们将会快速浏览Ionic的主要特性。Inoic 提供了两个主要特性：components 和 services。
 
@@ -57,7 +57,7 @@ Components 是使用标签和 CSS 类标识的用户界面元素，比如标签�
 
 在上面的两个例子中，第一个是现在在很多 google 应用中可以看到的卡片效果。仅仅是用 CSS 类就可以将样式做出效果。第二个是一个滑动框，用指令和 HTML 标签配合实现。在侧滑框的例子中还包括了一些属性，比如 `slide-interval` 指定了滑动框的配置（在这个例子中指定了每个滑动框展示的时间间隔）。
 
-###Ionic Services
+### Ionic Services
 
 Services 是在 JavaScript 中声明来操作用户界面元素的，通过了 Angular 的 Service 结构来提供。通常用在控制器中，提供有显示时间限制的界面元素（比如弹出窗口、弹出对话框、进度条）。就和 Angular 的 services 一样，Ionic 的 services 全部以 `$` 开头，而且在下面的例子中，你可以看到 services 都是根据功能来准确地命名。
 
@@ -90,7 +90,7 @@ function Controller($scope, $ionicSlideBoxDelegate) {
 
 现在，我们就来创建一个工程，然后动手实践这些内容。如果任何时候你想查看工程源码，都可以去 GitHub 上查看 [gnomeontherun/ionic-definitive-guide][17]。
 
-##新建一个Ionic工程
+## 新建一个Ionic工程
 
 让我们愉快地开始吧！第一件事就是新建一个工程。我们之前安装的 Ionic 命令行工具就可以派上用场了。
 
@@ -100,7 +100,7 @@ function Controller($scope, $ionicSlideBoxDelegate) {
 
 这个命令可以创建一个空白的叫做 `stocks` 的 APP  工程，基于我在我的书 [《动手学习Ionic》][18] 中创建的 starter APP 工程。这个空白的 starter APP 对于新建工程是个理想的选择。`ionic serve` 命令可以在浏览器中打开刚刚新建的 app，但它仅仅是一个空白的页面。不要担心，我们现在就来把它补充完整。
 
-##安装 Sass 做样式
+## 安装 Sass 做样式
 
 Ionic 一个十分有用的特性就是可以使用 [Sass][20] 定制化默认组件和预制颜色。官方推荐你以同样地方式利用 Ionic 提供的变量和自动生成器写你自己的样式表。
 
@@ -217,7 +217,7 @@ $ionicons-font-path: "../lib/ionic/fonts" !default;
 
 这将会建立 app 全部的样式文件。尽管在项目任何阶段都可以构建 Sass，但是最好在项目开始时就以这一步开始。接下来，将会开始建立起页面导航的基础。
 
-##添加 Ionic 的页面导航组件
+## 添加 Ionic 的页面导航组件
 
 导航是所有 app 的核心，Ionic 提供了一些功能强大的 components 用来导航。在本例中，你将会使用到 `ionTabs` 和 `ionNavView` components 去生成页面底部的标签页，实现不同页面的之间的导航。而 `ionSideMenus` component 通常用来展示一组可以导航的链接。
 
@@ -241,7 +241,7 @@ Ionic 使用了目前流行的 ui-router 项目做路由，它比 Angular 内核
 
 这个例子目前还是不能使用的，因为我们还没有定义任何 states 去实际加载内容（因此是一个空白页面）。让我们来建立第一个 state 吧！
 
-##添加标签页 state
+## 添加标签页 state
 
 现在我们来添加标签页 state 的模板。你需要定义模板，包含了标签页 component   `tabs.quotes` 和 `tabs.portfolio` 两种 states。你需要创建文件 www/views/tabs/tabs.html，并加入下面的代码。
 
@@ -280,7 +280,7 @@ Ionic 使用了目前流行的 ui-router 项目做路由，它比 Angular 内核
 
 可是到目前为止，屏幕上还是空白的。记住，`tabs` state 设置为 `abstract`，所以只有当它导航至子页面 state 中你才能看到界面。这意味着下一步我们要创建第一个子页面 state，那么我们就可以看到tab页面和一些非常有意思的事情发生了。
 
-##添加services
+## 添加services
 
 但是，等等！你需要一些 Angular services 知识来帮助管理这个 app，而这里我不打算花太多时间在这上面。你可以浏览注释看它们是怎么工作的，从事 Angular 的开发人员应该是非常熟悉的。第一个 service 是用来管理 localStorage 中的数据，第二个 service 是用来从雅虎金融加载股票报价数据的。如果你不熟悉 Angular 或怎样创建 service ，最好花一些时间看看 Angular service 的文档说明。
 
@@ -351,7 +351,7 @@ Ionic 使用了目前流行的 ui-router 项目做路由，它比 Angular 内核
 
 好了，现在是时候创建使用了上面的两个 services 的 quotes state 了。
 
-##添加 quotes state
+## 添加 quotes state
 
 是时候更进一步了。quotes 页面用来展示你要关注的股票列表，显示当前报价的细节，查找别的股票报价并添加他们，还可以进行排序。这看上去有很多复杂的功能，但是只需要 30 行 Html 代码和 70 行 JavaScript 代码。
 
@@ -495,7 +495,7 @@ Ionic 使用了目前流行的 ui-router 项目做路由，它比 Angular 内核
 
 现在，我们一起来看看让这个页面工作起来的 Ionic components 和 service。
 
-###Ionic 视图，导航按钮和内容 Components
+### Ionic 视图，导航按钮和内容 Components
 
 视图的基础就是可以包含模板的 `ionView` component。它的 `view-title` 属性可以页面标题栏上添加标题，其他的属性用来控制标题栏的其他的属性（比如视图是否需要缓存，是否需要显示返回按钮）。每个视图都需要 `ionView` 组件包含其内容。
 
@@ -513,7 +513,7 @@ Ionic 使用了目前流行的 ui-router 项目做路由，它比 Angular 内核
 
 这些 components 协同工作，为我们的页面提供主要的容器结构，在后面的视图中你还会看到他们，因为他们相当常见。
 
-###Ionic 加载 service
+### Ionic 加载 service
 
 Ionic 加载 service 用一个可以配置加载消息的界面覆盖了整个屏幕，直到页面内容加载完才消失，所以这保证了直到页面加载完用户才可以看到。从可用性的角度来说，在只有数据加载完页面才可以使用的情况下，这中做法是必要的。在这个例子中，只有 app 第一次加载数据的时候才会出现加载页面。
 
@@ -521,7 +521,7 @@ Ionic 加载 service 用一个可以配置加载消息的界面覆盖了整个�
 
 你可能会想，加载显示器应该在数据加载完之后自动隐藏起来，但是加载显示器需要你去调用 `hide()` 方法，这是因为它并不能准确地知道什么时候页面需要的一切都准备好去显示了。加载显示器就像是一个独行侠，仅仅表示这里有一个在屏幕上显示的加载提示。即便你多次调用 `show()` 方法，也只需要调用一次 `hide()` 来隐藏它。
 
-###Ionic 刷新 Component
+### Ionic 刷新 Component
 
 Ionic Refresher 是一个在页面内部可以容用户下拉刷新整个页面的 component。当用户下拉时，一个向下箭头出现，如果你下拉足够距离再放开的话，就会触发刷新。你可能会在很多app中看到这样的效果以重新加载数据，比如一个显示运动得分的应用，或者（像本例一样）股票报价。使用下拉手势而不是一个按钮去刷新是一种常见的设计模式。
 
@@ -529,7 +529,7 @@ Ionic Refresher 是一个在页面内部可以容用户下拉刷新整个页面�
 
 让刷新 component 正常工作的关键是要确保有一个独立的作用域方法去（重新）加载视图中的数据。因为 Refresher 是一个 component 而不是 service（像加载器那样），他会监听 `scroll.refreshComplete` 事件从而得知什么时候应该隐藏。如果你忘记了调用，那刷新控件将会一直显示。
 
-###Ionic Popup service
+### Ionic Popup service
 
 Ionic Popup（弹出窗口） service 用于展示信息或者和用户交互。他将会暂停当前的视图，显示一个带有提示信息和按钮的对话框。这里有几种类型的弹出框，你也可以构建自己的弹出框。
 
@@ -555,18 +555,21 @@ Ionic List（列表） Component 是强大的用于界面显示的 component，�
 
 Ionic List 是一个功能强大，对用户友好的列表管理组件。使用它们是常事，我还是要提醒你不要过度滥用它。任何元素的集合都能够以列表作为理想选择。在文档中可以看到，Ionic 列表可以使用 Ionic 默认的 CSS 类设计成不同的样式。一些公共的样式包括旁边有头像或图标的列表，像封面大图那样，或者把整个列表修改成卡片样式的，就像 Google Now 和 Tinder 应用的风格一样。
 
-###Ionic 底部工具栏和表单
+### Ionic 底部工具栏和表单
 
 Ionic 底部工具栏是在页面底部显示文本和简单内容的一种方式。它自动显示在其他控件的底部，比如我们之前讨论过的 `ionContent`。他确实需要正确地显示在 `ionContent` 外面，就像 `ionNavButtons` 一样。
 
 应用中的底部工具栏有一个简单的表单，包含了一些 Ionic 样式（加上了一些 Sass 文件中定义的外部用户样式）。表单样式的设计并不是完全为了底部导航条，但是它只需要几行样式就可以清除掉。这里的表单仅用了简单的搜索输入框和一个按钮，在提交表单的时候调用 `add()` 方法去尝试查看并且添加一个股票代码到当前列表。
 
-##添加 portfolio state
+## 添加 portfolio state
 
 最后一个重要步骤就是添加另一个视图去记录你的投资组合。这样你就可以得到你目前在某个价格下购买了多少股票的详细信息，和目前购买股票的回报率或损失率。这整个 state 大约有 60 行 HTML 和 100 行 JavaScript 代码。
 
 创建一个新文件 www/views/portfolio/portfolio.html 并且添加以下内容。
 
+
+{% raw %}
+```
     <ion-view view-title="My Portfolio">
       <!-- Add buttons to both primary and secondary sides of the navbar -->
       <ion-nav-buttons side="primary">
@@ -596,6 +599,8 @@ Ionic 底部工具栏是在页面底部显示文本和简单内容的一种方�
         </ion-list>
       </ion-content>
     </ion-view>
+```
+{% endraw %}
 
 创建一个新的文件 www/views/portfolio/add-modal.html，并且添加以下代码。
 
@@ -774,7 +779,7 @@ Ionic Modals 还需要对作用域下的 `destroy` 事件添加监听，所以�
 
 我发现 Ionic Modal 在大多数移动设备上是一个非常有用的工具。Modal 提供了一种不在滚屏上增加更多内容的方式，只展示用用户操作相关的部分。如果增加列表项的表单没有使用 modal 而是在 portfolio 视图中，那么它将会变得杂乱无章，所以 modal 在用户只是要添加一个新项目的时候，提供了更好的用户体验。modals 从创建到销毁确实都更多地设计和考虑。因为不可能直接导航到modal（至少如果没有额外的用户逻辑是做不到的），所以任何用户可以直接导到航的任何页面都可能不适合考虑使用 modal。
 
-###Ionic 页首工具条 Component
+### Ionic 页首工具条 Component
 
 Ionic 页首工具条和底部工具条一样，除了一点就像你知道的，它位于页面顶部。通过 CSS 类预置的几种不同的颜色可供选择，这里使用了 `bar-balanced`  class，它通过应用的 Sass 样式修改了默认的 CSS。由于 modal 是一个空白的覆盖这个 APP 界面的深蓝色页面，导航栏不会显示，需要你在页首顶部的工具条添加按钮。
 
@@ -802,7 +807,7 @@ Ionic List component 同样有删除模式，和我们之前在 quotes state 看
 
 现在，如果你在 URL 里没有加任何路径去访问这个 app，它将会默认为你加载报价页面。恭喜，你已经做好了一个功能相当丰富的移动应用，仅仅用了大约 120 行 HTML 和 200 行 JavaScript！谁能想到你如此容易的实现了这么多功能？
 
-##深入理解 Ionic
+## 深入理解 Ionic
 
 我们已经按照步骤完成了示例的应用，学到了很多关于 Ionic 组件如何一起协同工作，仅仅使用 HTML、CSS、JavaScript  来创建一个美观且功能强大的移动应用。你已经看到过了如何使用很多 components 和 service，比如，Ionic 列表、弹出框、Modals、导航条、内容、刷新条以及其他。这个基础对于你学习其他组件并深入到其他方面来说是十分有益的。
 

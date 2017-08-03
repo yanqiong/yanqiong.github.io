@@ -112,10 +112,14 @@ TypeScript 是 JavaScript 的超集，可以编译成普通的 JavaScript。这�
     
 或者，输入 `ifel` 然后按下 TAB 键，你就会得到：
 
-    {{#if }}
-    {{else}}
-    {{/if}}>
-    
+{% raw %}
+```
+{{#if }}
+{{else}}
+{{/if}}>
+```
+{% endraw %}
+
 相当的方便，对吗？
 
 在 [项目首页][39] 有一个完整地代码片段列表。

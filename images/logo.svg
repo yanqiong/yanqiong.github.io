@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<svg version="1.1" id="ShinnyLogo" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 500 500" style="enable-background:new 0 0 150 150;" xml:space="preserve">
+<style type="text/css">
+	.st0{fill:#FFF6F0;}
+	.st1{fill:#a0c1e4;}
+	.st2{fill:#FFFFFF;}
+</style>
+<g>
+  <rect class="st0" x="0" y="0" width="500" height="500"></rect>
+	<polygon class="st1" points="0,100 75,30 150,0
+								350,0 425,30 500,100
+								250,500"/>
+	<polygon class="st2" points="100,70 135,70 250,215 365,70 400,70
+								265,240 265,430 235,430 235,240 "/>
+	<!--<path class="st2" d="M125,52.1L66.8,182.6h0h21.7h0l11.7-29.2h49.4l11.7,29.2h0h21.7h0L125,52.1L125,52.1L125,52.1L125,52.1-->
+		<!--L125,52.1z M142,135.4H108l17-40.9L142,135.4z"/>-->
+</g>
+</svg>
